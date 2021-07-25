@@ -59,18 +59,17 @@ class _SearchingScreenState extends State<SearchingScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text('Search It!!'),
+        title: Text('Search It!'),
         backgroundColor: Colors.black,
         actions: <Widget>[
           TextButton(
               style: TextButton.styleFrom(
                 textStyle: const TextStyle(fontSize: 20),
               ),
-              child: Text(
-                'Shuffle',
-                style: TextStyle(
-                    fontSize: 20.0,
-                    color: isSearchingON ? Colors.blueGrey : Colors.white),
+              child: Icon(
+                Icons.wifi_protected_setup_outlined,
+                size: 25.0,
+                color: isSearchingON ? Colors.blueGrey : Colors.white,
               ),
               onPressed: isSearchingON
                   ? null
@@ -78,7 +77,7 @@ class _SearchingScreenState extends State<SearchingScreen> {
                 shuffle(value: sliderValue);
               }),
           Padding(
-              padding: EdgeInsets.only(right: 20.0, left: 10.0),
+              padding: EdgeInsets.only(right: 20.0),
               //the settings icon padding
               child: GestureDetector(
                 onTap: isSearchingON
@@ -88,7 +87,7 @@ class _SearchingScreenState extends State<SearchingScreen> {
                     builder: (context) => buildBottomSheet(context)),
                 child: Icon(
                   Icons.add,
-                  size: 23.0,
+                  size: 30.0,
                   color: isSearchingON ? Colors.blueGrey : Colors.white,
                 ),
               ))
